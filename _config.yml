@@ -1,0 +1,35 @@
+title: Janet's Internet Home
+email: janetzh@stanford.edu
+description: >- # this means to ignore newlines until "."
+  This is my website where I share more research related things.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Author information
+author:
+  name: Janet Zhong
+  email: janetzh@stanford.edu
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Minima theme settings
+minima:
+  skin: auto
+
+# Show excerpts on homepage
+show_excerpts: true
+
+# Markdown and LaTeX support
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+# Exclude these files from the build
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
