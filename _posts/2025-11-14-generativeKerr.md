@@ -29,7 +29,7 @@ and nonlinear optics research.
 The behaviour of continuous-wave laser light incident on an optical resonator can be studied with the Lugiato-Lefever equation (LLE).
 
 <p align="center">
-  <img src="/assets/images/LLE.pdf" alt="LLE">
+  <img src="/assets/images/LLE.png" alt="LLE">
 </p>
 
 The above picture in (a) is the optical spectra vs detuning (∆) calculated using the LLE. Detuning is the mismatch between the input laser frequency and the natural frequency of resonator. The order of transitions (if they occur) as detuning is swept is CW → Turing rolls → instabilities → solitons → CW. (b) is the field intensity snapshot vs spatial coordinate in the ring 𝜑 and (c) is the optical spectra snapshot in mode (frequency) space.
