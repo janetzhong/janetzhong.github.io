@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Machine Learning Kerr Combs"
-date: 2025-11-14 12:00:00 +0000
+date: 2025-11-19 12:00:00 +0000
 categories: research
 ---
 
-We will be presenting some [work](/assets/Machine_Learning_Kerr_Combs_v2_Nov14.pdf) on the inverse design of Kerr combs at the Machine Learning and the Physical Sciences Workshop @ NeurIPS. We train a generative neural network on Lugiato-Lefever equation simulations using variational autoencoders and flow-matching models.
+We will be presenting some [work](/assets/Machine_Learning_Kerr_Combs_v2_Nov19.pdf) on the inverse design of Kerr combs at the Machine Learning and the Physical Sciences Workshop @ NeurIPS. We train a generative neural network on Lugiato-Lefever equation simulations using variational autoencoders and flow-matching models.
 
 # Summary
 
