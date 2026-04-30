@@ -5,7 +5,7 @@ date: 2025-11-19 12:00:00 +0000
 categories: research
 ---
 
-We will be presenting some [work](/assets/Machine_Learning_Kerr_Combs_v2_Nov19.pdf) on the inverse design of Kerr combs at the Machine Learning and the Physical Sciences Workshop @ NeurIPS. We train a generative neural network on Lugiato-Lefever equation simulations using variational autoencoders and flow-matching models.
+We will be presenting some [work](https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_33.pdf) on the inverse design of Kerr combs at the Machine Learning and the Physical Sciences Workshop @ NeurIPS. We train a generative neural network on Lugiato-Lefever equation simulations using variational autoencoders and flow-matching models.
 
 # Summary
 
@@ -29,14 +29,22 @@ and nonlinear optics research.
 The behaviour of continuous-wave laser light incident on an optical resonator can be studied with the Lugiato-Lefever equation (LLE).
 
 <p align="center">
-  <img src="/assets/images/LLE.png" alt="LLE">
+  <img src="/assets/kerr_images/LLE.png" alt="LLE">
 </p>
 
-The above picture in (a) is the optical spectra vs detuning (∆) calculated using the LLE. Detuning is the mismatch between the input laser frequency and the natural frequency of resonator. The order of transitions (if they occur) as detuning is swept is CW → Turing rolls → instabilities → solitons → CW. (b) is the field intensity snapshot vs spatial coordinate in the ring 𝜑 and (c) is the optical spectra snapshot in mode (frequency) space.
+The above picture shows what the LLE predicts as the laser is tuned across the resonance. In (a), the horizontal axis is detuning (∆), which is the mismatch between the input laser frequency and the natural frequency of the resonator. As detuning is swept, the system can move through several regimes: a continuous-wave state, Turing rolls, instabilities, solitons, and eventually back to a continuous-wave state. Panel (b) shows a snapshot of the field intensity around the ring coordinate 𝜑, while panel (c) shows the same state in frequency space as an optical spectrum. Note that the stability of the states (how they fluctuate in time) is also important, and is contained in the LLE solution but is not shown in these snapshots here.
 
-# Kerr comb inverse design motivation
+# Generative neural network motivation
 
-The nonlinearity of Kerr combs means that they are difficult to analytical solve or computationally simulate. The LLE does not perfectly match reality, and thus data-driven machine learning approaches on actual experimental data is very compelling. For some desired property of optical spectra in the picture above, it is difficult to predict the physical parameters that produce it since the problem is nonlinear, high dimensional, and may have many solutions. An example of an inverse design objective is broadband solitons (which is when the optical spectra spans a wide number of modes and is a steady-state - both properties are useful for applications such as in telecommunications or metrology). Generative neural networks offer a compelling alternative to traditional optimization methods because they naturally represent the multi-valued nature of the problem. Conditional models also have the benefit that they do not require an extra optimization step. We train such a model using VAEs and flow matching models and we show that multi-objective inverse design can work well for Kerr combs. For more details, see the paper link above.
+One useful target is a broadband steady-state soliton, where the optical spectrum spans many modes while remaining stable. These states are useful for applications such as telecommunications and metrology, but finding the parameters that generate them is a nonlinear, high-dimensional problem. In this system, many different physical settings can produce similar spectra, making the inverse problem very one-to-many.
+
+Generative neural networks are an interesting approach because they can represent multiple valid solutions rather than returning a single optimized point. In this work, we use conditional VAEs and flow matching models to generate candidate Kerr-comb parameters and spectra, and show that multi-objective inverse design can work well in this setting. For more details, see the paper link above.
+
+<p align="center">
+  <img src="/assets/kerr_images/genv2.png" alt="Generative Kerr comb model">
+</p>
+
+In the picture above in (a, b), we show in the top row some generated samples and in the bottom row of (a, b) we show the nearest example in the test set, which are directly from the LLE. They match very well. In (c) and (d), we show one of the evaluation metrics, which is how close the generated distribution of parameters matches the test set parameter distribution (via a Wasserstein metric). In this metric, the flow model does better, but there are pros and cons of different models. The VAE is significantly cheaper to train.
 
 # Acknowledgement
 
